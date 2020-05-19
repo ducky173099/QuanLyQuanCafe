@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanCafe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,12 +23,19 @@ namespace QuanLyQuanCafe
             Application.Exit();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+           
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+        }
+
+        bool Login(string username, string password)
+        {
+            return AccountDAO.Instance.Login(username, password);
+
         }
 
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,5 +44,12 @@ namespace QuanLyQuanCafe
                 e.Cancel = true;
             }
         }
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
