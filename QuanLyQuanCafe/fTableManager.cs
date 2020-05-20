@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Menu = QuanLyQuanCafe.DTO.Menu;
 
 namespace QuanLyQuanCafe
 {
@@ -29,6 +30,8 @@ namespace QuanLyQuanCafe
             {
                 Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
+                btn.Click += btn_Click;
+                btn.Tag = item;
                 switch (item.Status)
                 {
                     case "Trống":
@@ -40,6 +43,32 @@ namespace QuanLyQuanCafe
                 }
                 flpTable.Controls.Add(btn);
             }
+        }
+
+        #endregion
+        
+        void ShowBill(int id)
+        {
+            lsvBill.Items.Clear();
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+
+            foreach (Menu item in listBillInfo)
+            {
+                ListViewItem listView = new ListViewItem(item.FoodName.ToString());
+                listView.SubItems.Add(item.Count.ToString());
+                listView.SubItems.Add(item.Price.ToString());
+                listView.SubItems.Add(item.TotalPrice.ToString());
+
+                //Đổ dữ liệu vào bảng lsvBill
+                lsvBill.Items.Add(listView);
+            }
+        }
+
+        #region Events
+        void btn_Click(object sender, EventArgs e)
+        {
+            int tableId = ((sender as Button).Tag as Table).ID;
+            ShowBill(tableId);
         }
         #endregion
 
@@ -61,6 +90,16 @@ namespace QuanLyQuanCafe
         }
 
         private void fTableManager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lsvBill_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
