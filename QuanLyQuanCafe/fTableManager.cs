@@ -28,6 +28,7 @@ namespace QuanLyQuanCafe
         #region Method
         void LoadTable()
         {
+            flpTable.Controls.Clear();
             List<Table> tableList = TableDAO.Instance.LoadTableList();
             foreach (Table item in tableList)
             {
@@ -124,6 +125,7 @@ namespace QuanLyQuanCafe
                 BillinfoDAO.Instance.createtBillInfo(idBill, idFood, count);
             }
             ShowBill(table.ID);
+            LoadTable();
         }
 
 
@@ -159,9 +161,27 @@ namespace QuanLyQuanCafe
 
         }
 
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
 
+            int idBill = BillDAO.Instance.GetUnCheckBill(table.ID);
+            int discount = (int)nmDiscount.Value;
+            double totalPrice = Convert.ToDouble(txt_TotalPrice.Text.Split(',')[0]); // Tổng tiền chưa giảm giá
+            double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;//Tổng tiền sau khi đã tính với giảm giá
+
+            if (idBill != -1)
+            {
+                if (MessageBox.Show(string.Format("Bạn có muốn thanh toán hóa đơn cho bàn {0}\n Tổng tiền - (Tổng tiền/100) x Giảm giá = {1} - ({1}/100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice ), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    BillDAO.Instance.CheckOut(idBill,discount);
+                    ShowBill(table.ID);
+                    LoadTable();
+                }
+            }
+        }
         #endregion
 
-       
+
     }
 }

@@ -107,10 +107,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lsvBill);
-            this.panel2.Location = new System.Drawing.Point(436, 88);
+            this.panel2.Location = new System.Drawing.Point(407, 88);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(322, 303);
+            this.panel2.Size = new System.Drawing.Size(351, 303);
             this.panel2.TabIndex = 2;
             // 
             // lsvBill
@@ -122,10 +122,10 @@
             this.columnHeader4});
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(0, 2);
+            this.lsvBill.Location = new System.Drawing.Point(2, 0);
             this.lsvBill.Margin = new System.Windows.Forms.Padding(2);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(321, 301);
+            this.lsvBill.Size = new System.Drawing.Size(347, 301);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -159,16 +159,16 @@
             this.panel3.Controls.Add(this.btnDiscount);
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel3.Location = new System.Drawing.Point(436, 396);
+            this.panel3.Location = new System.Drawing.Point(407, 396);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(322, 54);
+            this.panel3.Size = new System.Drawing.Size(351, 54);
             this.panel3.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 10);
+            this.label1.Location = new System.Drawing.Point(187, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 9;
@@ -178,7 +178,7 @@
             // 
             this.txt_TotalPrice.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txt_TotalPrice.ForeColor = System.Drawing.Color.OrangeRed;
-            this.txt_TotalPrice.Location = new System.Drawing.Point(148, 28);
+            this.txt_TotalPrice.Location = new System.Drawing.Point(178, 27);
             this.txt_TotalPrice.Name = "txt_TotalPrice";
             this.txt_TotalPrice.ReadOnly = true;
             this.txt_TotalPrice.Size = new System.Drawing.Size(100, 25);
@@ -189,10 +189,10 @@
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(2, 30);
+            this.cbSwitchTable.Location = new System.Drawing.Point(2, 29);
             this.cbSwitchTable.Margin = new System.Windows.Forms.Padding(2);
             this.cbSwitchTable.Name = "cbSwitchTable";
-            this.cbSwitchTable.Size = new System.Drawing.Size(74, 23);
+            this.cbSwitchTable.Size = new System.Drawing.Size(88, 23);
             this.cbSwitchTable.TabIndex = 7;
             // 
             // btnSwitchTable
@@ -200,40 +200,41 @@
             this.btnSwitchTable.Location = new System.Drawing.Point(2, 6);
             this.btnSwitchTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(74, 21);
+            this.btnSwitchTable.Size = new System.Drawing.Size(88, 21);
             this.btnSwitchTable.TabIndex = 6;
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
             // 
             // nmDiscount
             // 
-            this.nmDiscount.Location = new System.Drawing.Point(80, 33);
+            this.nmDiscount.Location = new System.Drawing.Point(94, 30);
             this.nmDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.nmDiscount.Name = "nmDiscount";
-            this.nmDiscount.Size = new System.Drawing.Size(69, 21);
+            this.nmDiscount.Size = new System.Drawing.Size(79, 21);
             this.nmDiscount.TabIndex = 5;
             this.nmDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDiscount
             // 
-            this.btnDiscount.Location = new System.Drawing.Point(80, 6);
+            this.btnDiscount.Location = new System.Drawing.Point(94, 6);
             this.btnDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(69, 21);
+            this.btnDiscount.Size = new System.Drawing.Size(79, 21);
             this.btnDiscount.TabIndex = 4;
-            this.btnDiscount.Text = "Giảm giá";
+            this.btnDiscount.Text = "Giảm giá %";
             this.btnDiscount.UseVisualStyleBackColor = true;
             // 
             // btnCheckOut
             // 
             this.btnCheckOut.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCheckOut.Location = new System.Drawing.Point(253, 6);
+            this.btnCheckOut.Location = new System.Drawing.Point(283, 6);
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(64, 46);
             this.btnCheckOut.TabIndex = 3;
             this.btnCheckOut.Text = "Thanh Toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // panel4
             // 
@@ -241,10 +242,10 @@
             this.panel4.Controls.Add(this.btnAddFood);
             this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.cbCategory);
-            this.panel4.Location = new System.Drawing.Point(436, 32);
+            this.panel4.Location = new System.Drawing.Point(407, 32);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(320, 50);
+            this.panel4.Size = new System.Drawing.Size(349, 50);
             this.panel4.TabIndex = 4;
             // 
             // nmFoodCount
@@ -300,7 +301,7 @@
             this.flpTable.Location = new System.Drawing.Point(11, 32);
             this.flpTable.Margin = new System.Windows.Forms.Padding(2);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(421, 418);
+            this.flpTable.Size = new System.Drawing.Size(392, 418);
             this.flpTable.TabIndex = 5;
             this.flpTable.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTable_Paint);
             // 
